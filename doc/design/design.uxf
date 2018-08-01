@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>160</y>
+      <w>490</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+org.jingoboard :: SettingsStore
+--
+- settingsFilePath: String
+- keybindsToSoundFiles: HashMap&lt;String keybind, String pathToSoundFile&gt;
+- audioSettings: HashMap&lt;String settingName, String settingValue&gt;
+--
++ &lt;&lt;constructor&gt;&gt; fetchSettings(String fileLocation)
++ getPath(String): Boolean
++ writeSettings(): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>160</y>
+      <w>250</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+org.jingoboard :: AudioSettings
+--
+- volume: Integer
+- JBOutputDevice: String
+--
++ &lt;&lt;constructor&gt;&gt; fetchAudioSettings()
++ getSystemInputDevices(): ArrayList
++ setJBOutputDevice(String): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>160</y>
+      <w>310</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+org.jingoboard :: AudioFile
+--
+- audioFilePath: String
+- audioFileName: String
+- audioLength: Integer
+--
++ &lt;&lt;constructor&gt;&gt; fetchSound(String fileLocation)
++ getAudioFilePath(String): Boolean
++ getAudioLengh(): Integer
++ playFile(): Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>160</y>
+      <w>230</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+org.jingoboard :: KeyboardMonitor
+--
+
+--
++ startListening(): Boolean
++ stopListening(): Boolean
++ keypressEvent()</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
